@@ -1,0 +1,10 @@
+#!/bin/bash
+clear
+read -p "Input user to delete : " username
+
+if getent passwd $username > /dev/null 2>&1; then
+        userdel $username
+        echo -e "User $username has been deleted."
+else
+        echo -e "Failure: User $Pengguna does not exist."
+fi
